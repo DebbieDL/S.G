@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Системна Грешка – Дебора Димитрова</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -21,19 +21,58 @@
       text-align: center;
     }
     header h1 {
+      font-family: 'Cinzel', serif;
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background-color: #000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #eee;
+      background-color: #5a2ea0;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #7b42ff;
     }
     main {
       padding: 2rem;
       max-width: 800px;
       margin: auto;
     }
+    .description-box {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+    }
+    .description-box p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
     img.cover {
       width: 100%;
       max-width: 400px;
       display: block;
-      margin: 1rem auto;
+      margin: 2rem auto 1rem;
       border: 2px solid #333;
     }
     section {
@@ -54,6 +93,15 @@
       text-align: center;
       font-size: 1.1rem;
     }
+    .quote-section {
+      background-color: #1b1b1b;
+      border-left: 4px solid #7b42ff;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-style: italic;
+      color: #ccc;
+      box-shadow: inset 0 0 10px rgba(123, 66, 255, 0.15);
+    }
     footer {
       background: #000;
       text-align: center;
@@ -61,8 +109,13 @@
       font-size: 0.9rem;
       color: #888;
     }
-    a { color: #88ccff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: #88ccff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -71,21 +124,42 @@
     <p>от Дебора Димитрова</p>
   </header>
 
+  <nav>
+    <a href="#order">Поръчка</a>
+    <a href="#reviews">Ревюта</a>
+    <a href="#share">Сподели</a>
+  </nav>
+
   <main>
     <section>
       <img src="cover.jpg" alt="Корицата на книгата" class="cover">
-      <p>“Системна Грешка” не е просто книга – тя е зов за събуждане. Една мечта, една изповед и едно послание за промяна. Докосва дълбоките пластове на съвременното общество – от алчността до моралната слепота. Това е книга, която не се чете, а се усеща. Която не поучава, а пробужда. Прочети я, ако си готов да погледнеш истината в очите.</p>
+      <div class="description-box">
+        <p>“Системна Грешка” не е просто книга – тя е зов за събуждане. Една мечта, една изповед и едно послание за промяна. Докосва дълбоките пластове на съвременното общество – от алчността до моралната слепота. Това е книга, която не се чете, а се усеща. Която не поучава, а пробужда. Прочети я, ако си готов да погледнеш истината в очите.</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Поръчай книгата сега. 
-      Цена: 20лв. (Доставката не е включена в цената)</h2>
+    <section class="quote-section">
+      „Да бъдеш роден. Това е началото на величественото нещо, наречено живот. Но това величие на живота не е самият той, а това как той бива изживян. Защото човек по много начина може да го провали, неосъзнавайки и вярвайки, че живота му бива пълноценно изживян, макар истината да е, че просто бива пропилян. Няма кодекс или писани правила, как един живот трябва да бъде изживян за да може да се нарече пълноценен, но съществува едно неписано правило – да правиш това, което кара сърцето ти да изпитва радост и любов. Неща, които човек мисли, че изпитва, но дали наистина го прави…“
+    </section>
+
+    <section id="order">
+      <h2>Поръчай книгата</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkjqEh6R8hrwg-STaAABggftN-YjmreaesH1D0sSxiuQx_GA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Зарежда се…</iframe>
+      <div class="price-note">Цена на книгата: 20 лв с ДДС</div>
     </section>
 
-    <section>
+    <section id="reviews">
       <h2>Ревюта</h2>
       <p>Очаквайте скоро! Ще добавим възможност да споделите вашето мнение за книгата.</p>
+    </section>
+
+    <section id="share">
+      <h2>Сподели</h2>
+      <p>Изпрати този сайт на приятел или сподели в социалните мрежи!</p>
+      <p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://DebbieDL.github.io/S.G" target="_blank">Сподели във Facebook</a> |
+        <a href="viber://forward?text=Поръчай книгата 'Системна Грешка' от тук: https://DebbieDL.github.io/S.G">Сподели във Viber</a>
+      </p>
     </section>
 
     <section>
@@ -99,3 +173,4 @@
   </footer>
 </body>
 </html>
+
