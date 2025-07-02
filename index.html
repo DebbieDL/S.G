@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Системна Грешка – Дебора Димитрова</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600&display=swap" rel="stylesheet" />
   <style>
     html {
       scroll-behavior: smooth;
@@ -98,6 +98,8 @@
       display: block;
       margin: 2rem auto 1rem;
       border: 2px solid #333;
+      box-shadow: 0 0 25px rgba(230, 220, 255, 0.35), 0 0 40px rgba(230, 220, 255, 0.15);
+      border-radius: 8px;
     }
     section {
       margin-bottom: 3rem;
@@ -111,12 +113,14 @@
     section:nth-of-type(4) { animation-delay: 0.8s; }
     section:nth-of-type(5) { animation-delay: 1s; }
     section:nth-of-type(6) { animation-delay: 1.2s; }
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     iframe {
       width: 640px;
       max-width: 100%;
@@ -126,19 +130,18 @@
       display: block;
       margin: auto;
     }
-   <style>
-.price-note {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #222;
-  border: 1px solid #444;
-  color: #fff;
-  text-align: center;
-  font-size: 1.1rem;
-  box-shadow: 0 0 15px rgba(200, 160, 255, 0.25);
-}
-</style>
+
+    .price-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      text-align: center;
+      font-size: 1.1rem;
+      box-shadow: 0 0 25px rgba(230, 220, 255, 0.35), 0 0 40px rgba(230, 220, 255, 0.15);
     }
+
     footer {
       background: #000;
       text-align: center;
@@ -146,14 +149,17 @@
       font-size: 0.9rem;
       color: #888;
     }
+
     a {
       color: #88ccff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('section');
@@ -176,6 +182,7 @@
     });
   </script>
 </head>
+
 <body>
   <header>
     <h1>Системна Грешка</h1>
@@ -190,11 +197,11 @@
 
   <main>
     <section>
-      <img src="cover.jpg" alt="Корицата на книгата" class="cover">
+      <img src="cover.jpg" alt="Корицата на книгата" class="cover" />
       <div class="description-box">
         <h2>За книгата</h2>
         <blockquote>
-          „Да бъдеш роден. Това е началото на величественото нещо, наречено живот. Но това величие на живота не е самият той, а това как той бива изживян. Защото човек по много начина може да го провали, неосъзнавайки и вярвайки, че живота му бива пълноценно изживян, макар истината да е, че просто бива пропилян. Няма кодекс или писани правила, как един живот трябва да бъде изживян за да може да се нарече пълноценен, но съществува едно неписано правило – да правиш това, което кара сърцето ти да изпитва радост и любов. Неща, които човек мисли, че изпитва, но дали наистина го прави…“
+          „Да бъдеш роден. Това е началото на величественото нещо, наречено живот. Но това величие на живота не е самият той, а това как той бива изживян. Защото човек по много начина може да го провали, неосъзнавайки и вярвайки, че живота му бива пълноценно изживян, макар истината да е, че просто бива пропилян...“
         </blockquote>
         <p>“Системна Грешка” не е просто книга – тя е зов за събуждане. Една мечта, една изповед и едно послание за промяна. Докосва дълбоките пластове на съвременното общество – от алчността до моралната слепота. Това е книга, която не се чете, а се усеща. Която не поучава, а пробужда. Прочети я, ако си готов да погледнеш истината в очите.</p>
       </div>
@@ -202,13 +209,13 @@
 
     <section id="order">
       <h2>Поръчай книгата</h2>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkjqEh6R8hrwg-STaAABggftN-YjmreaesH1D0sSxiuQx_GA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Зарежда се…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkjqEh6R8hrwg-STaAABggftN-YjmreaesH1D0sSxiuQx_GA/viewform?embedded=true">Зарежда се…</iframe>
       <div class="price-note">Цена на книгата: 20 лв с ДДС</div>
     </section>
 
     <section id="reviews">
       <h2>Ревюта</h2>
-      <p>Очаквайте скоро! Ще добавим възможност да споделите вашето мнение за книгата.</p>
+      <p>Очаквайте скоро! Тук ще можете да прочетете мненията на читатели и да оставите своето ревю.</p>
     </section>
 
     <section id="share">
