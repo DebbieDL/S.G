@@ -41,6 +41,9 @@
       gap: 1.5rem;
       padding: 1rem;
       background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     nav a {
       text-decoration: none;
@@ -52,9 +55,10 @@
       box-shadow: 0 0 10px rgba(123, 66, 255, 0.3);
       transition: all 0.3s ease;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       background-color: #7b42ff;
-      box-shadow: 0 0 20px rgba(123, 66, 255, 0.6);
+      box-shadow: 0 0 25px rgba(200, 160, 255, 0.6);
     }
     main {
       padding: 2rem;
@@ -65,13 +69,28 @@
       background-color: #1a1a1a;
       border: 1px solid #333;
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(200, 160, 255, 0.15);
+    }
+    .description-box h2 {
+      font-family: 'Cinzel', serif;
       text-align: center;
-      box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .description-box blockquote {
+      background-color: #1b1b1b;
+      border-left: 4px solid #7b42ff;
+      padding: 1.5rem;
+      margin: 0 0 2rem;
+      font-style: italic;
+      color: #ccc;
+      box-shadow: inset 0 0 10px rgba(123, 66, 255, 0.15);
     }
     .description-box p {
       font-size: 1.1rem;
       color: #ddd;
+      text-align: center;
     }
     img.cover {
       width: 100%;
@@ -99,10 +118,13 @@
       }
     }
     iframe {
-      width: 100%;
+      width: 640px;
+      max-width: 100%;
       height: 800px;
       border: none;
       background-color: #111;
+      display: block;
+      margin: auto;
     }
     .price-note {
       margin-top: 1rem;
@@ -112,15 +134,6 @@
       color: #fff;
       text-align: center;
       font-size: 1.1rem;
-    }
-    .quote-section {
-      background-color: #1b1b1b;
-      border-left: 4px solid #7b42ff;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      font-style: italic;
-      color: #ccc;
-      box-shadow: inset 0 0 10px rgba(123, 66, 255, 0.15);
     }
     footer {
       background: #000;
@@ -137,6 +150,27 @@
       text-decoration: underline;
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          if (id && entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -154,18 +188,18 @@
     <section>
       <img src="cover.jpg" alt="Корицата на книгата" class="cover">
       <div class="description-box">
+        <h2>За книгата</h2>
+        <blockquote>
+          „Да бъдеш роден. Това е началото на величественото нещо, наречено живот. Но това величие на живота не е самият той, а това как той бива изживян. Защото човек по много начина може да го провали, неосъзнавайки и вярвайки, че живота му бива пълноценно изживян, макар истината да е, че просто бива пропилян. Няма кодекс или писани правила, как един живот трябва да бъде изживян за да може да се нарече пълноценен, но съществува едно неписано правило – да правиш това, което кара сърцето ти да изпитва радост и любов. Неща, които човек мисли, че изпитва, но дали наистина го прави…“
+        </blockquote>
         <p>“Системна Грешка” не е просто книга – тя е зов за събуждане. Една мечта, една изповед и едно послание за промяна. Докосва дълбоките пластове на съвременното общество – от алчността до моралната слепота. Това е книга, която не се чете, а се усеща. Която не поучава, а пробужда. Прочети я, ако си готов да погледнеш истината в очите.</p>
       </div>
-    </section>
-
-    <section class="quote-section">
-      „Да бъдеш роден. Това е началото на величественото нещо, наречено живот. Но това величие на живота не е самият той, а това как той бива изживян. Защото човек по много начина може да го провали, неосъзнавайки и вярвайки, че живота му бива пълноценно изживян, макар истината да е, че просто бива пропилян. Няма кодекс или писани правила, как един живот трябва да бъде изживян за да може да се нарече пълноценен, но съществува едно неписано правило – да правиш това, което кара сърцето ти да изпитва радост и любов. Неща, които човек мисли, че изпитва, но дали наистина го прави…“
     </section>
 
     <section id="order">
       <h2>Поръчай книгата</h2>
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkjqEh6R8hrwg-STaAABggftN-YjmreaesH1D0sSxiuQx_GA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Зарежда се…</iframe>
-      <div class="price-note">Цена на книгата: 20 лв. (доставката не е включена)</div>
+      <div class="price-note">Цена на книгата: 20 лв с ДДС</div>
     </section>
 
     <section id="reviews">
